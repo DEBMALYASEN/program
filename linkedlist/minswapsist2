@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+
+    cin>>n;
+
+    int a[100];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+   int min=0;
+
+    bool visited[n]={0};
+
+    for (int i = 0; i < 2 * n; i++)
+     {
+
+        if (!visited[a[i]])
+         {
+            visited[a[i]] = true;
+            int c=0;
+
+            for (int j = i + 1; j < 2 * n; j++)
+             {
+
+
+                if (!visited[a[j]])
+                    c++;
+
+                else if (a[i] == a[j])
+                    min += c;
+            }
+        }
+}
+      cout<<c<<endl;
+  }

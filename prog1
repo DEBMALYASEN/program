@@ -1,0 +1,18 @@
+#include<bits/stdc++h>
+using namespace std;
+int main()
+{
+    int n,p=1;
+    cin>>n;
+    while(p>9)
+    {
+        p=1;
+        while(n>0)
+        {
+            p=p*(n%10);
+            n=n/10;
+        }
+        n=p;
+    }
+    cout<<p;
+}
